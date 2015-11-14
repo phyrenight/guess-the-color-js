@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+     <head>
+	      <title>Color Game</title>
+		  <meta charset="utf-8">
+		  <script>
+		       var guess_input ="white";
+			   var finished = false
+		       var color = ["black", "blue", "cyan", "darkblue", "gray", "green"                ,"silver"];
+			   function do_game(){
+			           target_index = Math.floor(Math.random() * (color.length));
+					   target = color[target_index];
+			    
+				       confirm("The color is " + target);
+				       while(!finished) {
+		                   guess_input = prompt("I am thinking of a color:\n\n" +
+				                    "black, blue, cyan, darkblue, gray, green, silver \n\n"+
+									"What color am I thinking of?\n\n");
+		                   if(guess_input == target)
+				               finished = true;
+				       };			 
+				};
+				do_game();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
+	
+		
