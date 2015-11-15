@@ -6,7 +6,7 @@
 
 	</head>
 	<body>
-			  <script>
+		  <script>
 			   var count = 0;
 		       var guess_input ="white";
 			   var finished = false;
@@ -22,13 +22,28 @@
 		                   guess_input = prompt("I am thinking of a color:\n\n" +
 				                    "black, blue, cyan, darkblue, gray, green, silver \n\n"+
 									"What color am I thinking of?\n\n");
-		                   if(guess_input == target){
-						       
-							   document.body.style.background=target;
-				               finished = true;
-						  };
+		                   finished = check_guess();
 				       };			 
 				};
+				function check_guess() {
+				     if(color.indexOf(guess_input) == -1){
+					     confirm(guess_input + " is not a color in the array");
+						 return false;
+				    }
+					else if (guess_input > target) {
+					     confirm("Guess is to high");
+						 return false;
+				    }
+					else if(guess_input < target) {
+					     confirm("Guess is to low");
+						 return false;
+				    }
+					else{
+					    confirm("Congradulations, You guessed the right color.\n Th color was " + target); 
+					    document.body.style.background=target;
+						return true;
+						}
+				}
 				do_game();
 		</script>
 	</body>
